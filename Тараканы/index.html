@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Игра - Тараканчики</title>
+	<style>
+		.player{
+			float: left;
+		}
+		.cl:before,
+	.cl:after {
+		content:"";
+		display:table;
+	}
+	.cl:after
+	{
+		clear:both;
+	}
+	.cl {
+		zoom:1; /* For IE 6/7 (trigger hasLayout) */
+	}
+	</style>
+	<script type="text/javascript" src="http://bug.vip-portal.org/bower_components/jquery/dist/jquery.min.js"></script>
+
+	<script type="text/javascript" src="race.js"></script>
+</head>
+<body>
+	<div class="player">
+		<form action="" id="player1" method="post">
+			<div class="label">1 таракан:</div>
+			<div class="bet"><input type="number" required placeholder="ставка" min="0" name="bet1_1" id="bet1_1" value="0"></div>
+			<div class="label">2 таракан:</div>
+			<div class="bet"><input type="number" required placeholder="ставка" min="0" name="bet1_2" id="bet1_2" value="0"></div>
+			<div class="label">3 таракан:</div>
+			<div class="bet"><input type="number" required placeholder="ставка" min="0" name="bet1_3" id="bet1_3" value="0"></div>
+			<div class="s_bet"><input type="submit" name="submit_1" value="Принять ставку игрока 1"></div> 
+		</form>
+	</div>
+	<div class="player">
+		<form action="" id="player2" method="POST">
+			<div class="label">1 таракан:</div>
+			<div class="bet">
+				<input type="number" placeholder="ставка" required min="0" value="0" name="bet2_1" id="bet2_1">
+			</div>
+			<div class="label">2 таракан:</div>
+			<div class="bet" >
+				<input type="number" id="bet2_2" required placeholder="ставка" value="0" min="0" name="bet2_2">
+			</div>
+			<div class="label">3 таракан:</div>
+			<div class="bet">
+				<input type="number" id="bet2_3" required placeholder="ставка" value="0" min="0" name="bet2_3">
+			</div>
+			<div class="s_bet"><input type="submit" name="submit_2" value="Принять ставку игрока 2"></div> 
+		</form>
+	</div>
+	<div class="player">
+		<form action="" id="player3" method="POST">
+			<div class="label">1 таракан:</div>
+			<div class="bet"><input type="number" required placeholder="ставка" value="0" min="0" name="bet3_1" id="bet3_1"></div>
+			<div class="label">2 таракан:</div>
+			<div class="bet"><input type="number" required id="bet3_2" value="0" placeholder="ставка" min="0" name="bet3_2"></div>
+			<div class="label">3 таракан:</div>
+			<div class="bet"><input type="number" required id="bet3_3" value="0" placeholder="ставка" min="0" name="bet3_3"></div>
+			<div class="s_bet"><input type="submit" name="submit_3" value="Принять ставку игрока 3"></div> 
+		</form>
+	</div>
+	<div id="result"></div>
+	<div class="cl"></div>
+	<div class="bank">
+		<div class="label">Сумма в банке:</div>
+		<div class="bet"><input type="number" name="bank" disabled value=""></div>
+	</div>
+	<button class="begin" onclick="start()">Начать забег</button>
+	<div class="modal">
+		<canvas id="gonka" width="800" height="450">Ваш браузер нИочень..</canvas>
+	</div>
+	<script type="text/javascript" src="ajax.js"></script>
+</body>
+</html>
